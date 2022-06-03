@@ -31,6 +31,7 @@ def main(args):
 
     g_ema = Generator(args.stylegan_size, 512, 8)
     g_ema.load_state_dict(torch.load(args.ckpt)["g_ema"], strict=False)
+    #! set in evaluation mode
     g_ema.eval()
     g_ema = g_ema.cuda()
     mean_latent = g_ema.mean_latent(4096)
@@ -143,5 +144,3 @@ if __name__ == "__main__":
     result_image = main(args)
 
     torchvision.utils.save_image(result_image.detach().cpu(), os.path.join(args.results_dir, "final_result.jpg"), normalize=True, scale_each=True, range=(-1, 1))
-
-
