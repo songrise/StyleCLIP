@@ -7,7 +7,7 @@ from torch.nn import functional as F
 
 from models.stylegan2.op import FusedLeakyReLU, fused_leaky_relu, upfirdn2d
 
-
+ 
 class PixelNorm(nn.Module):
     def __init__(self):
         super().__init__()
@@ -702,4 +702,3 @@ class Discriminator(nn.Module):
         out = self.final_linear(out)
 
         return out
-

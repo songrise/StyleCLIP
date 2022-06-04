@@ -2,3 +2,5 @@
 /latents/
 /results/
 /mine/
+.pth
+.pt

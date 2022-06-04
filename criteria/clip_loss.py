@@ -6,7 +6,7 @@ import clip
 class CLIPLoss(torch.nn.Module):
 
     def __init__(self, opts):
-        #! what is opts?
+        #opts is the argument parsed
         super(CLIPLoss, self).__init__()
         self.model, self.preprocess = clip.load("ViT-B/32", device="cuda")
         self.upsample = torch.nn.Upsample(scale_factor=7)
